@@ -1,9 +1,9 @@
 {
     "roles":  [
                   {
-                      "key":  "directivo",
-                      "label":  "Rol directivo",
-                      "img":  "media/roles/Rol directivo.jpg"
+                      "key":  "soporte",
+                      "label":  "Rol soporte o apoyo",
+                      "img":  "media/roles/Rol soporte o apoyo.jpg"
                   },
                   {
                       "key":  "tecnico",
@@ -11,9 +11,9 @@
                       "img":  "media/roles/Rol técnico.jpg"
                   },
                   {
-                      "key":  "soporte",
-                      "label":  "Rol soporte o apoyo",
-                      "img":  "media/roles/Rol soporte o apoyo.jpg"
+                      "key":  "directivo",
+                      "label":  "Rol directivo",
+                      "img":  "media/roles/Rol directivo.jpg"
                   }
               ],
     "comps":  [
