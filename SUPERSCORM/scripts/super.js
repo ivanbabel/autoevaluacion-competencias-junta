@@ -833,6 +833,9 @@ function buildAggregateReportPDF(JsPDF, items, roleLabel, studentName, logo){
   function changeRole(){
     activeComp = null; rubric = null;
     resetHeader();
+    // En la pantalla de elegir rol no se muestra ningún rol en la cabecera
+    // (si no, al volver aparecería el rol anterior y confunde).
+    $("#rb-rol").textContent = "";
     showView("role");
   }
 
