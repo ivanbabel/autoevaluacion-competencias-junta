@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Autoevaluación de Competencias Básicas</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <script defer src="scripts/scorm.global.js"></script>
+  <script defer src="scripts/scorm12_api.js"></script>
+  <script defer src="scripts/jspdf.global.js"></script>
+  <script defer src="scripts/super.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <header class="site-header">
+    <img class="site-logo" src="media/Logo-JuntaAndalucia.jpg" alt="Junta de Andalucía"/>
+    <div class="site-heading">
+      <p class="kicker" id="rb-competency"></p>
+      <h1 id="rb-title">Autoevaluación de Competencias Básicas</h1>
+      <p class="rol"><span class="visually-hidden">Rol evaluado: </span><span id="rb-rol"></span></p>
+    </div>
+  </header>
+  <hr class="header-rule"/>
+
+  <main class="container" id="contenido">
+
+    <!-- ===== Vista 1: elección de rol ===== -->
+    <section id="view-role" class="view" aria-labelledby="role-h" hidden>
+      <h2 id="role-h" class="view-title">Elige tu rol</h2>
+      <p class="muted">Selecciona el rol que mejor describe tu puesto. Verás las competencias correspondientes a ese rol. Podrás cambiarlo en cualquier momento.</p>
+      <ul class="role-grid" id="role-grid"></ul>
+    </section>
+
+    <!-- ===== Vista 2: menú de competencias del rol ===== -->
+    <section id="view-menu" class="view" aria-labelledby="menu-h" hidden>
+      <div class="view-head">
+        <div>
+          <h2 id="menu-h" class="view-title">Tus competencias</h2>
+          <p class="muted" id="menu-role-line"></p>
+        </div>
+        <button type="button" class="btn btn-ghost" id="btn-change-role">← Cambiar rol</button>
+      </div>
+
+      <div class="progress-panel" aria-live="polite">
+        <div class="progress-track"><div class="progress-fill" id="menu-progress-fill"></div></div>
+        <p class="progress-label" id="menu-progress-label">0 de 6 competencias completadas</p>
+      </div>
+
+      <ul class="comp-grid" id="comp-grid"></ul>
+
+      <div class="btn-row">
+        <button type="button" class="btn primary" id="btn-aggregate-pdf" disabled>Descargar informe completo (PDF)</button>
+      </div>
+      <p class="muted small" id="aggregate-hint">El informe completo estará disponible cuando hayas completado las 6 competencias. Tu progreso se guarda automáticamente.</p>
+    </section>
+
+    <!-- ===== Vista 3: wizard de una competencia (mismo render que los 18 paquetes) ===== -->
+    <section id="view-wizard" class="view" hidden>
+      <div class="view-head">
+        <button type="button" class="btn btn-ghost" id="btn-back-menu">← Volver a competencias</button>
+      </div>
+
+      <section class="intro" aria-labelledby="intro-h">
+        <h2 id="intro-h" class="visually-hidden">Instrucciones</h2>
+        <p id="rb-definition" class="definition"></p>
+        <p id="rb-instructions" class="muted"></p>
+        <div class="legend">
+          <p class="legend-title">Escala de valoración</p>
+          <ul class="legend-list" id="rb-legend"></ul>
+        </div>
+      </section>
+
+      <!-- Barra de progreso (la construye super.js) -->
+      <nav class="stepper" id="stepper" aria-label="Progreso de la autoevaluación"></nav>
+
+      <!-- Anuncio de cambio de paso para lectores de pantalla -->
+      <p class="visually-hidden" id="wizard-status" aria-live="polite"></p>
+
+      <!-- Pasos del asistente (los construye super.js) -->
+      <form id="wizard" novalidate>
+        <div id="steps"></div>
+      </form>
+    </section>
+
+    <div id="err" class="alert" role="alert" hidden></div>
+  </main>
+
+  <!-- Modal de confirmación de "Reiniciar" -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc" hidden>
+    <div class="modal-card">
+      <h2 id="modal-title" class="modal-title">Reiniciar esta competencia</h2>
+      <p id="modal-desc" class="modal-desc">Se perderán las respuestas actuales de esta competencia y empezarás de 0. Esta acción no se puede deshacer.</p>
+      <div class="btn-row modal-actions">
+        <button type="button" class="btn btn-ghost" id="modal-cancel">Cancelar</button>
+        <button type="button" class="btn danger" id="modal-confirm">Sí, reiniciar</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{
+    "roles":  [
+                  {
+                      "key":  "directivo",
+                      "label":  "Rol directivo",
+                      "img":  "media/roles/Rol directivo.jpg"
+                  },
+                  {
+                      "key":  "tecnico",
+                      "label":  "Rol técnico",
+                      "img":  "media/roles/Rol técnico.jpg"
+                  },
+                  {
+                      "key":  "soporte",
+                      "label":  "Rol soporte o apoyo",
+                      "img":  "media/roles/Rol soporte o apoyo.jpg"
+                  }
+              ],
+    "comps":  [
+                  {
+                      "order":  1,
+                      "folder":  "Compromiso SPO",
+                      "display":  "Compromiso con el servicio público y la organización"
+                  },
+                  {
+                      "order":  2,
+                      "folder":  "Orientación a la ciudadanía",
+                      "display":  "Orientación a la ciudadanía"
+                  },
+                  {
+                      "order":  3,
+                      "folder":  "Mejora continua",
+                      "display":  "Mejora continua"
+                  },
+                  {
+                      "order":  4,
+                      "folder":  "Aprendizaje permanente",
+                      "display":  "Aprendizaje permanente"
+                  },
+                  {
+                      "order":  5,
+                      "folder":  "Cooperación y colaboración",
+                      "display":  "Cooperación y colaboración"
+                  },
+                  {
+                      "order":  6,
+                      "folder":  "Flexibilidad y adaptabilidad al cambio",
+                      "display":  "Flexibilidad y adaptabilidad al cambio"
+                  }
+              ]
+}
